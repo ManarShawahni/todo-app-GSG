@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My ToDo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <div class="left-panel">
+      <h2>Add / Edit Your Task</h2>
+      <form id="todo-form">
+        <input type="text" id="todo-title" placeholder="Task title" required />
+        <input type="text" id="todo-description" placeholder="Description (optional)" />
+        <input type="datetime-local" id="todo-time" />
+        <button type="submit">Save</button>
+      </form>
+      <div id="custom-alert" class="hidden"></div>
+    </div>
+
+    <div class="right-panel">
+      <h2>My Tasks</h2>
+      <div id="todo-list"></div>
+      <p id="task-count">You have 0 tasks</p>
+      <div id="congrats-alert" class="hidden">🎉 Congrats! All tasks are done! 🎉</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

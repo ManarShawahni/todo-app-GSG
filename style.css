@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #FDFBEE;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  }
+  
+  .left-panel,
+  .right-panel {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .left-panel {
+    background-color: #ffffff;
+    border-right: 2px solid #e0e0e0;
+  }
+  
+  .right-panel {
+    background-color: #FDFBEE;
+  }
+  
+  h2 {
+    margin-top: 0;
+    color: #015551;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input,
+  button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  input:focus {
+    border-color: #57B4BA;
+    outline: none;
+  }
+  
+  button {
+    background-color: #57B4BA;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #015551;
+  }
+  
+  #todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    color: #015551;
+  }
+  
+  .todo-item.done {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .todo-item button {
+    margin-left: 5px;
+    background-color: #57B4BA;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    color: white;
+  }
+  
+  .todo-item button:hover {
+    background-color: #015551;
+  }
+  
+  .todo-item button:last-child {
+    background-color: #FE4F2D;
+  }
+  
+  .todo-item button:last-child:hover {
+    background-color: #d93f1d;
+  }
+  
+  #task-count {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #015551;
+  }
+  
+  #custom-alert {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #ffe6e0;
+    color: #FE4F2D;
+    border: 1px solid #f5c6cb;
+    display: none;
+    font-weight: bold;
+  }
+  
+  #custom-alert.show {
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #congrats-alert {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #e0f8f9;
+    color: #015551;
+    padding: 12px 20px;
+    border: 1px solid #b4e4e6;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    animation: bounce 0.6s ease forwards;
+    display: none;
+  }
+  
+  #congrats-alert.show {
+    display: block;
+    animation: bounce 0.6s ease;
+  }
+  
+  @keyframes bounce {
+    0%   { transform: scale(1); opacity: 0; }
+    50%  { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+    }
+  
+    .left-panel,
+    .right-panel {
+      border: none;
+      padding: 20px;
+    }
+  
+    .left-panel {
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+  
