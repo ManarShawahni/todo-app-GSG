@@ -3,27 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My ToDo App</title>
+  <title>My Cute ToDo App</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="main-container">
-    <div class="left-panel">
-      <h2>Add / Edit Your Task</h2>
-      <form id="todo-form">
-        <input type="text" id="todo-title" placeholder="Task title" required />
-        <input type="text" id="todo-description" placeholder="Description (optional)" />
-        <input type="datetime-local" id="todo-time" />
-        <button type="submit">Save</button>
-      </form>
-      <div id="custom-alert" class="hidden"></div>
-    </div>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
 
-    <div class="right-panel">
-      <h2>My Tasks</h2>
-      <div id="todo-list"></div>
-      <p id="task-count">You have 0 tasks</p>
-      <div id="congrats-alert" class="hidden">🎉 Congrats! All tasks are done! 🎉</div>
+  <div class="app">
+    <header>
+      <h1>Hi, Friend! ✨</h1>
+      <p class="date" id="current-date"></p>
+    </header>
+
+    <div class="todo-container">
+      <form id="todo-form" class="todo-form">
+        <h2>Add New Task</h2>
+        <input type="text" id="todo-title" placeholder="Task title" required />
+        <textarea id="todo-description" placeholder="Description (optional)" rows="3"></textarea>
+        <input type="datetime-local" id="todo-time" />
+        
+        <div class="form-row">
+          <select id="task-priority">
+            <option value="low">Low Priority</option>
+            <option value="medium" selected>Medium Priority</option>
+            <option value="high">High Priority</option>
+          </select>
+          
+          <input type="text" id="task-category" placeholder="Category" list="categories">
+          <datalist id="categories">
+            <option value="Work">
+            <option value="Personal">
+            <option value="Shopping">
+            <option value="Health">
+          </datalist>
+        </div>
+        
+        <button type="submit">Save Task</button>
+        
+        <div id="custom-alert" class="alert hidden"></div>
+        <p id="task-count">You have 0 tasks</p>
+      </form>
+
+      <section class="todo-section">
+        <h2>Your Tasks</h2>
+        <div class="search-box">
+          <input type="text" id="task-search" placeholder="Search tasks...">
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="task-controls">
+          <select id="sort-tasks">
+            <option value="default">Sort by</option>
+            <option value="priority">Priority</option>
+            <option value="date">Due Date</option>
+            <option value="category">Category</option>
+          </select>
+          <button id="toggle-dark">🌙</button>
+        </div>
+        <div id="todo-list" class="todo-list"></div>
+        <div id="congrats-alert" class="congrats hidden">🎉 Yay! All tasks are done! 🎉</div>
+      </section>
     </div>
   </div>
 
